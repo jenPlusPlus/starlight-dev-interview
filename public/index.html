@@ -12,9 +12,16 @@
     </header>
     <main>
       <h1>Starlight Pro Cans</h1>
-      <div id='cans-container'>
-        <div id='cans-card-container'></div>
-      </div>
+      <form id='size-filter'>
+        <fieldset>
+          <legend>Filter Cans by Size</legend>
+          <label for='size-filter-input'>Size:</label>
+          <input id='size-filter-input' type='text' placeholder='Enter can size.'></input>
+          <button id='size-filter-submit' type='submit'>Submit</button>
+          <button id='size-filter-clear' type='reset'>Clear Filter</button>
+        </fieldset>
+      </form>
+      <div id='cans-card-container'></div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src='./js/index.js'></script>

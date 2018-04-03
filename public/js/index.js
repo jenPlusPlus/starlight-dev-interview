@@ -1,7 +1,20 @@
+const filterCans = () => {
+  event.preventDefault();
+  $('#cans-card-container').empty();
+  fetch('/api/v1/cans')
+    .then(cans => cans.json())
+    .then(parsedCans => parsedCans.filter(can => can.size === $('#size-filter-input').val()))
+    .then(filteredCans => addCansToPage(filteredCans))
+    .catch(error => console.log(error));
+};
+
+const clearFilter = () => {
+  $('#cans-card-container').empty();
+  getAllCans();
+}
+
 const addCansToPage = (cansArray) => {
   if (cansArray.length > 0) {
-    console.log(cansArray);
-
     const cansHTML = cansArray.map(can => {
       return `<div class='card' id=${can.id} key=${can.id}>
       <p class='can-name'>
@@ -28,17 +41,20 @@ const addCansToPage = (cansArray) => {
     });
     $('#cans-card-container').append(cansHTML);
   } else {
-    $('#cans-card-container').append(`<p id='no-cans'>No cans found.</p>`)
+    $('#cans-card-container').append(`<p id='no-cans'>No cans found.</p>`);
   }
 };
 
-const getCans = () => {
+const getAllCans = () => {
   fetch('/api/v1/cans')
     .then(cans => cans.json())
     .then(parsedCans => addCansToPage(parsedCans))
     .catch(error => console.log(error));
 };
 
+$('#size-filter-submit').on('click', filterCans);
+$('#size-filter-clear').on('click', clearFilter);
+
 window.onload = () => {
-  getCans();
+  getAllCans();
 };
