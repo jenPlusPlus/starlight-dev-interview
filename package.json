@@ -1,0 +1,25 @@
+{
+  "name": "starlight-dev-interview",
+  "version": "1.0.0",
+  "description": "Code challenge for Starlight Pro dev position",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "lint": "./node_modules/.bin/eslint ./"
+  },
+  "author": "Jen Woodson",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
