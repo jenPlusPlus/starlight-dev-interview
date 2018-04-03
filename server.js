@@ -35,9 +35,7 @@ const readJSONFile = (fileName) => {
 };
 
 // serve base URL
-app.get('/', (request, response) => {
-  response.send('Starlight Challenge!!');
-});
+app.use(express.static(__dirname + '/public'));
 
 // serve cans
 app.get('/api/v1/cans', async (request, response) => {
