@@ -35,15 +35,13 @@ const readJSONFile = (fileName) => {
 };
 
 // serve base URL
-app.get('/', (request, response) => {
-  response.send('Starlight Challenge!!');
-});
+app.use(express.static(__dirname + '/public'));
 
 // serve cans
 app.get('/api/v1/cans', async (request, response) => {
   const cans = await readJSONFile('cans.json');
   if (cans !== '') {
-    return response.status(200).json({ cans });
+    return response.status(200).json(cans);
   } else {
     return response.status(404).json({ error: 'Could not find any cans.'});
   }
