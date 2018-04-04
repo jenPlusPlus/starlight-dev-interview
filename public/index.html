@@ -3,21 +3,28 @@
   <head>
     <meta charset='utf-8'>
     <title>Starlight Dev Interview</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href='./css/styles.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
       <img src='./assets/logo.png' alt='Starlight Pro Logo'>
-      <h2>Dev Interview Code Challenge</h2>
-      <h3>Jen Woodson</h3>
+      <div id='title-box'>
+        <h2>Dev Interview Code Challenge</h2>
+        <h3>Jen Woodson</h3>
+      </div>
     </header>
     <main>
       <h1>Starlight Pro Cans</h1>
       <form id='size-filter'>
         <fieldset>
           <legend>Filter Cans by Size</legend>
-          <label for='size-filter-input'>Size:</label>
-          <input id='size-filter-input' type='text' placeholder='Enter can size.'></input>
-          <button id='size-filter-submit' type='submit'>Submit</button>
+          <div id='form'>
+            <label for='size-filter-input'>Size:</label>
+            <input id='size-filter-input' type='text' placeholder='Enter can size.'></input>
+          </div>
+          <button id='size-filter-submit' type='submit' disabled='true'>Submit</button>
           <button id='size-filter-clear' type='reset'>Clear Filter</button>
         </fieldset>
       </form>
